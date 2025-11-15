@@ -1,0 +1,288 @@
+/* 
+ * Cyberpunk Theme Configuration
+ * 
+ * This file contains all the CSS variables for the cyberpunk theme.
+ * To customize the theme, simply change the values below.
+ * 
+ * Color Palette Options:
+ * - Neon Blue: #00d4ff (current)
+ * - Neon Purple: #b026ff (current)
+ * - Neon Green: #00ff41 (current)
+ * - Neon Cyan: #00ffff (current)
+ * - Neon Pink: #ff0080 (current)
+ * - Neon Orange: #ff6b35 (current)
+ * 
+ * Alternative Color Schemes:
+ * 
+ * 1. Matrix Green Theme:
+ *    --neon-primary: #00ff41;
+ *    --neon-secondary: #00cc33;
+ *    --neon-accent: #00ff88;
+ * 
+ * 2. Cyberpunk Red Theme:
+ *    --neon-primary: #ff0040;
+ *    --neon-secondary: #ff0080;
+ *    --neon-accent: #ff4000;
+ * 
+ * 3. Electric Blue Theme:
+ *    --neon-primary: #0080ff;
+ *    --neon-secondary: #00ffff;
+ *    --neon-accent: #4000ff;
+ * 
+ * 4. Sunset Orange Theme:
+ *    --neon-primary: #ff6b35;
+ *    --neon-secondary: #ff8c42;
+ *    --neon-accent: #ff4757;
+ */
+
+:root {
+  /* ===== PRIMARY COLOR SCHEME ===== */
+  /* Main neon colors - Change these to customize the theme */
+  --neon-blue: #00d4ff;
+  --neon-purple: #b026ff;
+  --neon-green: #00ff41;
+  --neon-cyan: #00ffff;
+  --neon-pink: #ff0080;
+  --neon-orange: #ff6b35;
+  
+  /* ===== BACKGROUND COLORS ===== */
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #1a1a1a;
+  --bg-tertiary: #2a2a2a;
+  --bg-glass: rgba(26, 26, 26, 0.8);
+  --bg-glass-light: rgba(42, 42, 42, 0.6);
+  --bg-overlay: rgba(0, 0, 0, 0.7);
+  
+  /* ===== TEXT COLORS ===== */
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+  --text-muted: #666666;
+  --text-neon: #00d4ff;
+  --text-success: #00ff41;
+  --text-warning: #ff6b35;
+  --text-error: #ff0040;
+  
+  /* ===== BORDER & SHADOW EFFECTS ===== */
+  --border-neon: 2px solid var(--neon-blue);
+  --border-glow: 0 0 20px rgba(0, 212, 255, 0.5);
+  --shadow-neon: 0 0 30px rgba(0, 212, 255, 0.3);
+  --shadow-dark: 0 8px 32px rgba(0, 0, 0, 0.8);
+  --shadow-light: 0 4px 16px rgba(0, 212, 255, 0.2);
+  
+  /* ===== GRADIENTS ===== */
+  --gradient-primary: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);
+  --gradient-neon: linear-gradient(45deg, var(--neon-blue), var(--neon-purple), var(--neon-green));
+  --gradient-glass: linear-gradient(135deg, rgba(26, 26, 26, 0.9), rgba(42, 42, 42, 0.7));
+  --gradient-button: linear-gradient(45deg, var(--neon-blue), var(--neon-cyan));
+  --gradient-text: linear-gradient(45deg, var(--neon-blue), var(--neon-purple));
+  
+  /* ===== TYPOGRAPHY ===== */
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+  --font-display: 'Fira Code', 'JetBrains Mono', monospace;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  
+  /* ===== SPACING SYSTEM ===== */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+  --spacing-3xl: 6rem;
+  
+  /* ===== BORDER RADIUS ===== */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 30px;
+  --radius-full: 9999px;
+  
+  /* ===== TRANSITIONS ===== */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  --transition-bounce: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+  /* ===== ANIMATION DURATIONS ===== */
+  --animation-fast: 0.3s;
+  --animation-normal: 0.5s;
+  --animation-slow: 1s;
+  --animation-very-slow: 2s;
+  
+  /* ===== Z-INDEX LAYERS ===== */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+  
+  /* ===== COMPONENT SPECIFIC VARIABLES ===== */
+  
+  /* Button Colors */
+  --button-primary: var(--neon-blue);
+  --button-secondary: var(--neon-purple);
+  --button-success: var(--neon-green);
+  --button-warning: var(--neon-orange);
+  --button-danger: var(--neon-pink);
+  
+  /* Input Colors */
+  --input-border: rgba(0, 212, 255, 0.3);
+  --input-border-focus: var(--neon-blue);
+  --input-bg: rgba(26, 26, 26, 0.8);
+  --input-bg-focus: rgba(26, 26, 26, 0.9);
+  
+  /* Card Colors */
+  --card-bg: var(--bg-glass);
+  --card-border: rgba(0, 212, 255, 0.2);
+  --card-shadow: var(--shadow-dark);
+  
+  /* HUD Colors */
+  --hud-bg: rgba(0, 0, 0, 0.8);
+  --hud-border: var(--neon-green);
+  --hud-text: var(--neon-green);
+  
+  /* Scoreboard Colors */
+  --scoreboard-bg: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(26, 26, 26, 0.8));
+  --scoreboard-border: var(--neon-orange);
+  --scoreboard-text: var(--neon-orange);
+  
+  /* Code Editor Colors */
+  --code-bg: rgba(0, 0, 0, 0.9);
+  --code-border: var(--neon-cyan);
+  --code-text: var(--text-primary);
+  --code-comment: var(--text-muted);
+  --code-keyword: var(--neon-purple);
+  --code-string: var(--neon-green);
+  --code-number: var(--neon-orange);
+  --code-function: var(--neon-cyan);
+}
+
+/* ===== THEME VARIATIONS ===== */
+
+/* Matrix Green Theme */
+[data-theme="matrix"] {
+  --neon-blue: #00ff41;
+  --neon-purple: #00cc33;
+  --neon-green: #00ff88;
+  --neon-cyan: #00ff41;
+  --neon-pink: #00cc33;
+  --neon-orange: #00ff88;
+}
+
+/* Cyberpunk Red Theme */
+[data-theme="red"] {
+  --neon-blue: #ff0040;
+  --neon-purple: #ff0080;
+  --neon-green: #ff4000;
+  --neon-cyan: #ff0040;
+  --neon-pink: #ff0080;
+  --neon-orange: #ff4000;
+}
+
+/* Electric Blue Theme */
+[data-theme="electric"] {
+  --neon-blue: #0080ff;
+  --neon-purple: #00ffff;
+  --neon-green: #4000ff;
+  --neon-cyan: #00ffff;
+  --neon-pink: #0080ff;
+  --neon-orange: #4000ff;
+}
+
+/* Sunset Orange Theme */
+[data-theme="sunset"] {
+  --neon-blue: #ff6b35;
+  --neon-purple: #ff8c42;
+  --neon-green: #ff4757;
+  --neon-cyan: #ff6b35;
+  --neon-pink: #ff8c42;
+  --neon-orange: #ff4757;
+}
+
+/* ===== UTILITY CLASSES ===== */
+
+/* Color Utilities */
+.text-neon-blue { color: var(--neon-blue) !important; }
+.text-neon-purple { color: var(--neon-purple) !important; }
+.text-neon-green { color: var(--neon-green) !important; }
+.text-neon-cyan { color: var(--neon-cyan) !important; }
+.text-neon-pink { color: var(--neon-pink) !important; }
+.text-neon-orange { color: var(--neon-orange) !important; }
+
+.bg-neon-blue { background-color: var(--neon-blue) !important; }
+.bg-neon-purple { background-color: var(--neon-purple) !important; }
+.bg-neon-green { background-color: var(--neon-green) !important; }
+.bg-neon-cyan { background-color: var(--neon-cyan) !important; }
+.bg-neon-pink { background-color: var(--neon-pink) !important; }
+.bg-neon-orange { background-color: var(--neon-orange) !important; }
+
+.border-neon-blue { border-color: var(--neon-blue) !important; }
+.border-neon-purple { border-color: var(--neon-purple) !important; }
+.border-neon-green { border-color: var(--neon-green) !important; }
+.border-neon-cyan { border-color: var(--neon-cyan) !important; }
+.border-neon-pink { border-color: var(--neon-pink) !important; }
+.border-neon-orange { border-color: var(--neon-orange) !important; }
+
+/* Glow Effects */
+.glow-blue { box-shadow: 0 0 20px rgba(0, 212, 255, 0.4) !important; }
+.glow-purple { box-shadow: 0 0 20px rgba(176, 38, 255, 0.4) !important; }
+.glow-green { box-shadow: 0 0 20px rgba(0, 255, 65, 0.4) !important; }
+.glow-cyan { box-shadow: 0 0 20px rgba(0, 255, 255, 0.4) !important; }
+.glow-pink { box-shadow: 0 0 20px rgba(255, 0, 128, 0.4) !important; }
+.glow-orange { box-shadow: 0 0 20px rgba(255, 107, 53, 0.4) !important; }
+
+/* Text Shadow Effects */
+.text-shadow-blue { text-shadow: 0 0 10px var(--neon-blue) !important; }
+.text-shadow-purple { text-shadow: 0 0 10px var(--neon-purple) !important; }
+.text-shadow-green { text-shadow: 0 0 10px var(--neon-green) !important; }
+.text-shadow-cyan { text-shadow: 0 0 10px var(--neon-cyan) !important; }
+.text-shadow-pink { text-shadow: 0 0 10px var(--neon-pink) !important; }
+.text-shadow-orange { text-shadow: 0 0 10px var(--neon-orange) !important; }
+
+/* Animation Utilities */
+.animate-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+.animate-bounce { animation: bounce 1s infinite; }
+.animate-spin { animation: spin 1s linear infinite; }
+.animate-ping { animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite; }
+.animate-fade-in { animation: fadeIn 0.5s ease-in; }
+.animate-slide-up { animation: slideUp 0.5s ease-out; }
+
+/* ===== ANIMATION KEYFRAMES ===== */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(-25%); animation-timing-function: cubic-bezier(0.8, 0, 1, 1); }
+  50% { transform: none; animation-timing-function: cubic-bezier(0, 0, 0.2, 1); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes ping {
+  75%, 100% { transform: scale(2); opacity: 0; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+

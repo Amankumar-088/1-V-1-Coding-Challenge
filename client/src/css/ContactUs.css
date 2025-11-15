@@ -1,0 +1,508 @@
+/* Contact Us Page Styles - Cyberpunk Theme */
+
+.contact-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: var(--spacing-md);
+  padding-top: calc(var(--spacing-md) + 120px); /* Increased padding to account for navbar and HUD elements */
+}
+
+/* Animated Background */
+.contact-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+
+/* Floating Particles */
+.particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--neon-cyan);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--neon-cyan);
+  animation: floatUp 5s linear infinite;
+  opacity: 0.6;
+}
+
+.particle:nth-child(even) {
+  background: var(--neon-purple);
+  box-shadow: 0 0 10px var(--neon-purple);
+  animation-duration: 7s;
+}
+
+.particle:nth-child(3n) {
+  background: var(--neon-green);
+  box-shadow: 0 0 10px var(--neon-green);
+  animation-duration: 6s;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Main Content */
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xl);
+  z-index: 1;
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Title Section */
+.title-section {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.main-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.title-glow {
+  background: linear-gradient(45deg, var(--neon-blue), var(--neon-cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: titlePulse 3s ease-in-out infinite;
+}
+
+.title-accent {
+  background: linear-gradient(45deg, var(--neon-purple), var(--neon-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 var(--spacing-sm);
+  animation: titlePulse 3s ease-in-out infinite reverse;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  animation: subtitleGlow 4s ease-in-out infinite;
+}
+
+@keyframes titlePulse {
+  0%, 100% { filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.5)); }
+  50% { filter: drop-shadow(0 0 25px rgba(0, 212, 255, 0.8)); }
+}
+
+@keyframes subtitleGlow {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+/* Contact Card */
+.contact-card {
+  width: 100%;
+  padding: var(--spacing-xl);
+  position: relative;
+  animation: cardEntrance 1s ease-out;
+}
+
+.contact-card::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple), var(--neon-green), var(--neon-blue));
+  border-radius: var(--radius-lg);
+  z-index: -1;
+  animation: borderRotate 3s linear infinite;
+}
+
+@keyframes cardEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes borderRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Card Header */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  color: var(--neon-blue);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--neon-green);
+  border-radius: 50%;
+  animation: statusPulse 2s ease-in-out infinite;
+}
+
+.status-text {
+  font-size: 0.8rem;
+  color: var(--neon-green);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+@keyframes statusPulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 5px var(--neon-green); }
+  50% { opacity: 0.5; box-shadow: 0 0 15px var(--neon-green); }
+}
+
+/* Contact Info */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-normal);
+}
+
+.contact-item:hover {
+  border-color: var(--neon-blue);
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
+  transform: translateX(5px);
+}
+
+.contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: var(--neon-blue);
+  border-radius: 50%;
+  color: var(--bg-primary);
+  font-size: 1.2rem;
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+  animation: iconPulse 2s ease-in-out infinite;
+}
+
+@keyframes iconPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.contact-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 400;
+}
+
+.contact-value {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.contact-link {
+  color: var(--neon-cyan);
+  text-decoration: none;
+  transition: all var(--transition-normal);
+}
+
+.contact-link:hover {
+  color: var(--neon-pink);
+  text-shadow: 0 0 10px var(--neon-pink);
+}
+
+/* Social Links */
+.social-links {
+  text-align: center;
+}
+
+.social-title {
+  font-size: 1.2rem;
+  color: var(--neon-purple);
+  margin-bottom: var(--spacing-md);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  text-shadow: 0 0 10px rgba(176, 38, 255, 0.5);
+}
+
+.social-grid {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-xl);
+}
+
+.social-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md);
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.social-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+  transition: var(--transition-normal);
+}
+
+.social-link:hover::before {
+  left: 100%;
+}
+
+.github-link {
+  border-color: var(--neon-green);
+  color: var(--neon-green);
+}
+
+.github-link:hover {
+  background: var(--neon-green);
+  color: var(--bg-primary);
+  box-shadow: 0 0 30px rgba(0, 255, 65, 0.6);
+  transform: translateY(-5px);
+}
+
+.linkedin-link {
+  border-color: var(--neon-blue);
+  color: var(--neon-blue);
+}
+
+.linkedin-link:hover {
+  background: var(--neon-blue);
+  color: var(--bg-primary);
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.6);
+  transform: translateY(-5px);
+}
+
+.social-icon {
+  font-size: 2rem;
+  transition: all var(--transition-normal);
+}
+
+.social-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* HUD Elements */
+.hud-corner {
+  position: fixed;
+  z-index: 10;
+}
+
+.hud-corner.top-left {
+  top: calc(var(--spacing-lg) + 80px); /* Position below navbar */
+  left: var(--spacing-lg);
+}
+
+.hud-corner.top-right {
+  top: calc(var(--spacing-lg) + 80px); /* Position below navbar */
+  right: var(--spacing-lg);
+}
+
+.hud-element {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm) var(--spacing-md);
+  min-width: 80px;
+}
+
+.hud-label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 400;
+}
+
+.hud-value {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-shadow: 0 0 10px currentColor;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-container {
+    padding: var(--spacing-sm);
+    padding-top: calc(var(--spacing-sm) + 80px);
+  }
+  
+  .main-title {
+    font-size: 2.5rem;
+    letter-spacing: 0.1em;
+  }
+  
+  .contact-card {
+    padding: var(--spacing-lg);
+  }
+  
+  .card-header {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    text-align: center;
+  }
+  
+  .contact-item {
+    padding: var(--spacing-sm);
+  }
+  
+  .social-grid {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+  
+  .hud-corner {
+    display: none;
+  }
+  
+  .particle {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .contact-card {
+    padding: var(--spacing-md);
+  }
+  
+  .contact-item {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--spacing-sm);
+  }
+  
+  .contact-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  
+  .social-link {
+    padding: var(--spacing-sm);
+  }
+  
+  .social-icon {
+    font-size: 1.5rem;
+  }
+}
+
+/* Additional Animations */
+@keyframes glitch {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+}
+
+.contact-card:hover {
+  animation: glitch 0.3s ease-in-out;
+}
+
+.contact-item:hover {
+  animation: glitch 0.2s ease-in-out;
+}
+
+.social-link:hover {
+  animation: glitch 0.2s ease-in-out;
+}

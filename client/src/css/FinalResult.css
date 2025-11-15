@@ -1,0 +1,123 @@
+/* FinalResult Page Styles - Cyberpunk Theme */
+
+.final-result-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 94.5vh;
+  background: linear-gradient(135deg, #2980b9, #2c3e50);
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  padding: 20px;
+  text-align: center;
+}
+
+.congratulations-title {
+  margin-top: 5rem;
+  font-size: 40px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: white;
+}
+
+.winner-name {
+  font-size: 40px;
+  font-weight: bold;
+  color: #FFA500;
+}
+
+.results-section {
+  margin-top: 3rem;
+}
+
+.results-title {
+  margin: 0;
+  font-size: 2rem;
+  color: #3498db;
+}
+
+.match-results-table {
+  width: 50%;
+  margin-top: 1rem;
+}
+
+.match-results-table__table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.match-results-table__header {
+  background: #34495e;
+  color: #fff;
+  padding: 12px;
+  text-align: left;
+  font-weight: bold;
+  border-bottom: 1px solid #2c3e50;
+}
+
+.match-results-table__cell {
+  padding: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: left;
+}
+
+.match-results-table__cell:last-child {
+  font-weight: bold;
+  color: #FFA500;
+}
+
+.admin-buttons {
+  position: absolute;
+  margin-top: 15rem;
+}
+
+.player-buttons {
+  position: absolute;
+  margin-top: 15rem;
+}
+
+.final-result-button {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  padding: 1rem;
+  background-color: #e74c3c;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.final-result-button:hover {
+  background-color: #c0392b;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .congratulations-title {
+    font-size: 28px;
+    margin-top: 3rem;
+  }
+  
+  .winner-name {
+    font-size: 28px;
+  }
+  
+  .match-results-table {
+    width: 90%;
+  }
+  
+  .final-result-button {
+    font-size: 1.2rem;
+    padding: 0.8rem;
+  }
+}

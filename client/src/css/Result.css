@@ -1,0 +1,59 @@
+/* Result Page Styles - Cyberpunk Theme */
+
+.result-title {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.result-title h2 {
+  color: #3498db;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.match-results-table {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.match-results-table__table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.match-results-table__header {
+  background: #34495e;
+  color: #fff;
+  padding: 12px;
+  text-align: left;
+  font-weight: bold;
+  border-bottom: 1px solid #2c3e50;
+}
+
+.match-results-table__cell {
+  padding: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: left;
+  color: #fff;
+}
+
+.match-results-table__cell:last-child {
+  font-weight: bold;
+  color: #FFA500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .result-title h2 {
+    font-size: 1.5rem;
+  }
+  
+  .match-results-table__header,
+  .match-results-table__cell {
+    padding: 8px;
+    font-size: 14px;
+  }
+}

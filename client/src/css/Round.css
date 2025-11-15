@@ -1,0 +1,105 @@
+/* Round Page Styles - Cyberpunk Theme */
+
+.round-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 94.5vh;
+  background: linear-gradient(135deg, #2980b9, #2c3e50);
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  padding: 20px;
+  text-align: center;
+}
+
+.round-title {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #3498db;
+}
+
+.round-subtitle {
+  margin: 1rem 0;
+  font-size: 1.5rem;
+  color: #ecf0f1;
+}
+
+.countdown {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff4f58;
+  padding: 10px;
+  background: rgba(255, 79, 88, 0.1);
+  border-radius: 5px;
+  border: 1px solid #ff4f58;
+  margin: 1rem 0;
+}
+
+.matches-section h2 {
+  margin: 2rem 0 1rem 0;
+  color: #3498db;
+  font-size: 1.8rem;
+}
+
+.matches-list {
+  max-height: 300px;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.matches-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.match-item {
+  margin-bottom: 5px;
+  padding: 10px;
+  background: #34495e;
+  border-radius: 4px;
+  border: 1px solid #2c3e50;
+  transition: all 0.3s ease;
+}
+
+.match-item:hover {
+  background: #2c3e50;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.match-item h3 {
+  margin: 0;
+  color: #3498db;
+  font-size: 1.1rem;
+}
+
+.match-item h4 {
+  margin: 0;
+  color: #bdc3c7;
+  font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .round-title {
+    font-size: 1.5rem;
+  }
+  
+  .round-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .countdown {
+    font-size: 18px;
+  }
+  
+  .matches-grid {
+    grid-template-columns: 1fr;
+  }
+}

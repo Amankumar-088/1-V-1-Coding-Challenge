@@ -1,0 +1,96 @@
+/* Match Page Styles - Cyberpunk Theme */
+
+.match-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 94.5vh;
+  background: linear-gradient(135deg, #2980b9, #2c3e50);
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  padding: 20px;
+}
+
+.match-header {
+  text-align: center;
+}
+
+.match-title {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #3498db;
+}
+
+.timer {
+  margin-top: 1rem;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff4f58;
+  padding: 5px;
+  background: rgba(255, 79, 88, 0.1);
+  border-radius: 5px;
+  border: 1px solid #ff4f58;
+}
+
+.match-info {
+  margin-top: 1rem;
+  text-align: center;
+  background-color: #f0f0f0;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.player-name {
+  font-size: 30px;
+  font-weight: bold;
+  color: #333;
+}
+
+.vs-text {
+  font-size: 18px;
+  color: #666;
+  margin: 0 10px;
+}
+
+.opponent-name {
+  font-size: 15px;
+  font-weight: bold;
+  color: #333;
+}
+
+.match-content {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+  margin-top: 2rem;
+}
+
+.problem-section {
+  flex: 1;
+}
+
+.ide-section {
+  flex: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .match-content {
+    flex-direction: column;
+  }
+  
+  .match-title {
+    font-size: 1.5rem;
+  }
+  
+  .player-name {
+    font-size: 24px;
+  }
+  
+  .timer {
+    font-size: 16px;
+  }
+}

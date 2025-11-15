@@ -1,0 +1,421 @@
+/* Home Page Styles - Cyberpunk Theme */
+
+.home-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: var(--spacing-md);
+  padding-top: calc(var(--spacing-md) + 120px); /* Increased padding to account for navbar and HUD elements */
+}
+
+/* Animated Background */
+.home-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+
+/* Floating Particles */
+.particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--neon-cyan);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--neon-cyan);
+  animation: floatUp 5s linear infinite;
+  opacity: 0.6;
+}
+
+.particle:nth-child(even) {
+  background: var(--neon-purple);
+  box-shadow: 0 0 10px var(--neon-purple);
+  animation-duration: 7s;
+}
+
+.particle:nth-child(3n) {
+  background: var(--neon-green);
+  box-shadow: 0 0 10px var(--neon-green);
+  animation-duration: 6s;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Main Content */
+.home-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xl);
+  z-index: 1;
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Title Section */
+.title-section {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.main-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.title-glow {
+  background: linear-gradient(45deg, var(--neon-blue), var(--neon-cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: titlePulse 3s ease-in-out infinite;
+}
+
+.title-accent {
+  background: linear-gradient(45deg, var(--neon-purple), var(--neon-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 var(--spacing-sm);
+  animation: titlePulse 3s ease-in-out infinite reverse;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  animation: subtitleGlow 4s ease-in-out infinite;
+}
+
+@keyframes titlePulse {
+  0%, 100% { filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.5)); }
+  50% { filter: drop-shadow(0 0 25px rgba(0, 212, 255, 0.8)); }
+}
+
+@keyframes subtitleGlow {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.home-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-lg);
+  min-width: 200px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid var(--neon-blue);
+  background: transparent;
+  color: var(--neon-blue);
+  transition: all var(--transition-normal);
+}
+
+.home-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+  transition: var(--transition-normal);
+}
+
+.home-button:hover {
+  background: var(--neon-blue);
+  color: var(--bg-primary);
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.6);
+  transform: translateY(-5px);
+}
+
+.home-button:hover::before {
+  left: 100%;
+}
+
+.button-icon {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-xs);
+}
+
+.button-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.button-subtitle {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  font-weight: 300;
+}
+
+.create-button {
+  border-color: var(--neon-green);
+  color: var(--neon-green);
+}
+
+.create-button:hover {
+  background: var(--neon-green);
+  box-shadow: 0 0 30px rgba(0, 255, 65, 0.6);
+}
+
+.join-button {
+  border-color: var(--neon-purple);
+  color: var(--neon-purple);
+}
+
+.join-button:hover {
+  background: var(--neon-purple);
+  box-shadow: 0 0 30px rgba(176, 38, 255, 0.6);
+}
+
+/* User Stats */
+.user-stats {
+  margin-bottom: var(--spacing-xl);
+}
+
+.stats-card {
+  padding: var(--spacing-lg);
+  min-width: 300px;
+  text-align: center;
+}
+
+.stats-title {
+  font-size: 1.2rem;
+  color: var(--neon-cyan);
+  margin-bottom: var(--spacing-md);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-md);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--neon-orange);
+  text-shadow: 0 0 10px var(--neon-orange);
+}
+
+/* Logout Button */
+.logout-button {
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-color: var(--neon-pink);
+  color: var(--neon-pink);
+  background: transparent;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.logout-button:hover {
+  background: var(--neon-pink);
+  color: var(--bg-primary);
+  box-shadow: 0 0 30px rgba(255, 0, 128, 0.6);
+  transform: translateY(-2px);
+}
+
+/* HUD Elements */
+.hud-corner {
+  position: fixed;
+  z-index: 10;
+}
+
+.hud-corner.top-left {
+  top: calc(var(--spacing-lg) + 80px); /* Position below navbar */
+  left: var(--spacing-lg);
+}
+
+.hud-corner.top-right {
+  top: calc(var(--spacing-lg) + 80px); /* Position below navbar */
+  right: var(--spacing-lg);
+}
+
+.hud-corner.bottom-left {
+  bottom: var(--spacing-lg);
+  left: var(--spacing-lg);
+}
+
+.hud-corner.bottom-right {
+  bottom: var(--spacing-lg);
+  right: var(--spacing-lg);
+}
+
+.hud-element {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm) var(--spacing-md);
+  min-width: 80px;
+}
+
+.hud-label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 400;
+}
+
+.hud-value {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-shadow: 0 0 10px currentColor;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .home-container {
+    padding: var(--spacing-sm);
+    padding-top: calc(var(--spacing-sm) + 80px);
+  }
+  
+  .main-title {
+    font-size: 2.5rem;
+    letter-spacing: 0.1em;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+  
+  .home-button {
+    min-width: 250px;
+  }
+  
+  .stats-card {
+    min-width: 250px;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-sm);
+  }
+  
+  .hud-corner {
+    display: none;
+  }
+  
+  .particle {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .home-button {
+    min-width: 200px;
+    padding: var(--spacing-md);
+  }
+  
+  .button-icon {
+    font-size: 1.5rem;
+  }
+  
+  .button-text {
+    font-size: 1rem;
+  }
+  
+  .stats-card {
+    min-width: 200px;
+    padding: var(--spacing-md);
+  }
+  
+  .stat-value {
+    font-size: 1.2rem;
+  }
+}
+
+/* Additional Animations */
+@keyframes glitch {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+}
+
+.home-button:hover {
+  animation: glitch 0.3s ease-in-out;
+}
+
+.stats-card:hover {
+  animation: glitch 0.3s ease-in-out;
+}
